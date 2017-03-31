@@ -4,7 +4,7 @@
   "description": "A recipe grabber",
   "main": "index.js",
   "dependencies": {
-    "angular": "^1.6.3",
+    "angular": "^1.6.4",
     "body-parser": "^1.17.1",
     "bootstrap": "^3.3.7",
     "bootstrap-tagsinput": "^0.7.1",

@@ -7,17 +7,23 @@
         <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
         <script src="node_modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.js"></script>
         <link rel="stylesheet" href="node_modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.css"/>
-        <script src="node_modules/bootstrap-tagsinput/dist/bootstrap-tagsinput-angular.min.js"></script>
         <link href="node_modules/bootstrap-tagsinput/dist/bootstrap-tagsinput-typeahead.css"/>
+        <style>
+            body{background-color: #4BD274;}
+        </style>
     </head>
     <body ng-controller="spoonacularController">
-        <div class="form-group">
-            <label for="likes">Likes:</label>
-            <input type="text" value="" data-role="tagsinput" id="likes"/>
-        </div>
-        <div class="form-group">
-            <label for="dislikes">Dislikes:</label>
-            <input data-role="tagsinput" type="text" class="form-control" id="dislikes">
+        <div class="container">
+            <div class="row">
+                <div class="form-group">
+                    <label for="likes">Likes:</label>
+                    <input type="text" value="" data-role="tagsinput" id="likes"/>
+                </div>
+                <div class="form-group">
+                    <label for="dislikes">Dislikes:</label>
+                    <input type="text" value="" data-role="tagsinput" id="dislikes"/>
+                </div>
+            </div>
         </div>
         <script src="app.js"></script>
     </body>
