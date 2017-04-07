@@ -11,6 +11,7 @@
 function getRecipes()
 {
     //ajax call to read all events
+    //get request with hard-coded query params, replace these with data from the inputs
         $.get("http://localhost:3000/?dislikes=oranges%2C+olives&likes=pork", function(data, status){
             console.log(data);
             //run through the data to get each individual recipe
