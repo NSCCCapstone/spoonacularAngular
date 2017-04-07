@@ -37,11 +37,7 @@ module.exports.show = function(req,res,next){
         .header("X-Mashape-Key", "Tvrn3k9JkhmshuZ8RNyT4i3v4G1Hp10U0YkjsnOd1d34u7DOaJ")
         .header("Accept", "application/json")
         .end(function (result) {
-            console.log(result.status, result.headers, result.body);
-            console.log(result.body);
-        });
-    req.getConnection(function(err, connection){
-            if (err) return next(err);
+            res.json(result);
         });
 };
 
