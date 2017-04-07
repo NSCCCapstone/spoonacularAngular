@@ -11,28 +11,21 @@
 
 </head>
     <body>
-
-        <div>
-            <div>
-                <label for="likes">Likes</label>
-                <input name="likes" id="likes" type="text"/>
+    <div class="container">
+        <form>
+            <div class="form-group col-md-6">
+                <input type="text" class="form-control" id="likes">
             </div>
-            <div>
-                <label for="dislikes">Dislikes</label>
-                <input name="dislikes" id="dislikes" type="text"/>
+            <div class="form-group col-md-6">
+                <input type="text" class="form-control" id="dislikes">
             </div>
-            <button id="search">Find Recipes</button>
-        </div>
-
-
-        <div>
-            <div id="recipe1">
-            </div>
-            <div id="recipe2">
-            </div>
-            <div id="recipe3">
-            </div>
-        </div>
+        </form>
+    </div>
+    <div class="container">
+            <div id="recipe1" class="third col-md-4"></div>
+            <div id="recipe2" class="third col-md-4"></div>
+            <div id="recipe3" class="third col-md-4"></div>
+    </div>
 
     </body>
 </html>
