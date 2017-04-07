@@ -10,6 +10,8 @@ module.exports.index = function(req,res,next){
         // var likes = ["pork"];
         // var dislikes = ["oranges", "olives"];
 
+        //added parsing for query params
+
         console.log(req.query.likes);
         console.log(req.query.dislikes);
 
