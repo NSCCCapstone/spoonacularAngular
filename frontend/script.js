@@ -10,16 +10,8 @@
 function getRecipes()
 {
     //ajax call to read all events
-    $.ajax({
-        url: "http://localhost:3000/",
-        method: "GET",
-        success: function (data) {
-
-            if (data != null && data.length > 0) {
-                console.log(data);
-
-            }
-        }
+        $.get("http://localhost:3000/", function(data, status){
+            console.log(data);
     });
 }
 
