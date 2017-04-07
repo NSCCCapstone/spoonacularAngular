@@ -7,15 +7,16 @@
 /*CRUD functions*/
 
 
-function readEvents()
+function getRecipes()
 {
     //ajax call to read all events
     $.ajax({
-        url: "http://localhost:3000/users/" + $('#userId').val() + "/events/",
+        url: "http://localhost:3000/",
         method: "GET",
         success: function (data) {
 
             if (data != null && data.length > 0) {
+                console.log(data);
 
             }
         }
@@ -24,5 +25,5 @@ function readEvents()
 
 
 $(document).ready(function(){
-
+    getRecipes();
 });
