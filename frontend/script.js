@@ -22,28 +22,26 @@ function getRecipes()
     //ajax call to read all events
     //get request with hard-coded query params, replace these with data from the inputs
         $.get("http://localhost:3000/?dislikes=" + dislikes + "&likes=" + likes, function(data, status){
-            console.log(data);
             //run through the data to get each individual recipe
             for(var i = 0; i<data.body.results.length; i++){
                 var recipeNum = i + 1;
                 var recipe = $('#recipe' + recipeNum);
                 recipe.attr('onclick','selectRecipe(' + data.body.results[i].id + ')');
+                recipe.append('<h1 class="text-center" id="recipeTitle">' + data.body.results[i].title + '</h1>');
                 recipe.append("<img class='recipeImg img-responsive' src='" + data.body.results[i].image + "'/>");
-                recipe.append(data.body.results[i].title);
             }
 
         });
 }
 function selectRecipe(foodId){
     $.get("http://localhost:3000/"+foodId, function(select, status) {
-        console.log(data.body.results);
     });
 }
 
 $(document).ready(function(){
 
     var imagesHeight = $(window).height() - $('.inputs').height();
-    $('.recipes').css({height: imagesHeight});
+    $('.recipeImg').css({height: imagesHeight});
 
     $('#submit').click(function(){
         $('#recipe1').text('');
