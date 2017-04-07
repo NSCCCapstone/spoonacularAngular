@@ -15,10 +15,12 @@ function getRecipes()
             console.log(data);
             //run through the data to get each individual recipe
             for(var i = 0; i<data.body.results.length; i++){
-
+                var recipeNum = i + 1;
+                var recipes = $('#recipe' + recipeNum);
+                recipes.text(data.body.results[i].title)
             }
 
-                });
+        });
 }
 
 
