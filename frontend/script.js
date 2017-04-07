@@ -36,7 +36,11 @@ function getRecipes()
 
         });
 }
-
+function selectRecipe(foodId){
+    $.get("http://localhost:3000/"+foodId, function(select, status) {
+        console.log(data.body.results);
+    });
+}
 
 $(document).ready(function(){
     $('#submit').click(function(){
