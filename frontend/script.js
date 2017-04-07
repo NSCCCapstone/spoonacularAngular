@@ -18,7 +18,8 @@ function getRecipes()
                 var recipeNum = i + 1;
                 var recipe = $('#recipe' + recipeNum);
                 recipe.attr('onclick','selectRecipe(' + data.body.results[i].id + ')');
-                recipe.text(data.body.results[i].title)
+                recipe.append("<img class='img-responsive' src='" + data.body.results[i].image + "'/>");
+                recipe.append(data.body.results[i].title);
             }
 
         });
