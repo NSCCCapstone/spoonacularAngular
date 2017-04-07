@@ -1,0 +1,23 @@
+#likesDislikes{
+    background: red;
+    width: 100%;
+    height: 50vh;
+}
+
+#likesDislikes div{
+    width: 20%;
+    height: 40vh;
+    background: gray;
+    display: inline-block;
+}
+
+#likes{
+
+}
+
+
+#threeRecipes{
+    background: green;
+    width: 100%;
+    height: 50vh;
+}
