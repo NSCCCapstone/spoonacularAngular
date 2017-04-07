@@ -39,6 +39,18 @@ function selectRecipe(foodId){
         console.log(data.body.results);
     });
 }
+//spinner code
+var myVar;
+
+function myFunction() {
+    myVar = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+    document.getElementById("loader").style.display = "none";
+    document.getElementById("myDiv").style.display = "block";
+}
+//end of spinner code
 
 $(document).ready(function(){
 

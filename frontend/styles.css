@@ -51,3 +51,28 @@ html, body {
     overflow-y:hidden;
     height:100%;
 }
+
+#loader {
+    position: fixed;
+    /*display: none;*/
+    width: 100vw;
+    /*height: 50px;*/
+    left: 0;
+    bottom: 0;
+    /*z-index: 1;*/
+    /*margin: -75px 0 0 -75px;*/
+    background: #EFEFEC;
+    /*background: grey;*/
+}
+#loader img{
+    padding: 0 auto;
+    margin: 0 auto;
+    height: 50vh;
+    width: auto;
+    display: block;
+}
+
+#myDiv {
+    display: none;
+    text-align: center;
+}
