@@ -16,8 +16,9 @@ function getRecipes()
             //run through the data to get each individual recipe
             for(var i = 0; i<data.body.results.length; i++){
                 var recipeNum = i + 1;
-                var recipes = $('#recipe' + recipeNum);
-                recipes.text(data.body.results[i].title)
+                var recipe = $('#recipe' + recipeNum);
+                recipe.attr('onclick','selectRecipe(' + data.body.results[i].id + ')');
+                recipe.text(data.body.results[i].title)
             }
 
         });
