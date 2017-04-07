@@ -13,24 +13,40 @@
 
 </head>
     <body>
-    <div class="container">
-        <form>
-            <div class="form-group">
-                <label for="likes">Likes</label>
-                <input type="text" id="likes" data-role="tagsinput"/>
+        <div class="container title">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1>SPOONACULAR</h1>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="dislikes">Dislikes</label>
-                <input type="text" id="dislikes" data-role="tagsinput"/>
-            </div>
-            <button type="button" id="submit" class="btn btn-primary">GET RECIPES</button>
-        </form>
-    </div>
-    <div class="container">
-            <div id="recipe1" class="third col-md-4"></div>
-            <div id="recipe2" class="third col-md-4"></div>
-            <div id="recipe3" class="third col-md-4"></div>
-    </div>
-
+        </div>
+        <div class="container inputs">
+            <form>
+                <div class="row">
+                    <div class="col-md-6 text-center">
+                        <label for="likes" class="label">FOODS YOU LIKE</label>
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <label for="dislikes" class="label">FOODS YOU DISLIKE</label>
+                    </div>
+                </div>
+                <div class="row images">
+                    <div class="form-group col-md-6 text-center">
+                        <input type="text" id="likes" data-role="tagsinput"/>
+                    </div>
+                    <div class="form-group col-md-6 text-center">
+                        <input type="text" id="dislikes" data-role="tagsinput"/>
+                    </div>
+                    <div class="col-md-12 text-center">
+                        <button type="button" id="submit" class="btn btn-primary">GET RECIPES</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="container recipes">
+                <div id="recipe1" class="third col-md-4"></div>
+                <div id="recipe2" class="third col-md-4"></div>
+                <div id="recipe3" class="third col-md-4"></div>
+        </div>
     </body>
 </html>

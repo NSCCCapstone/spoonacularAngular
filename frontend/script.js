@@ -6,8 +6,6 @@
 //
 /*CRUD functions*/
 
-
-
 function getRecipes()
 {
 
@@ -30,7 +28,7 @@ function getRecipes()
                 var recipeNum = i + 1;
                 var recipe = $('#recipe' + recipeNum);
                 recipe.attr('onclick','selectRecipe(' + data.body.results[i].id + ')');
-                recipe.append("<img class='img-responsive' src='" + data.body.results[i].image + "'/>");
+                recipe.append("<img class='recipeImg img-responsive' src='" + data.body.results[i].image + "'/>");
                 recipe.append(data.body.results[i].title);
             }
 
@@ -43,7 +41,14 @@ function selectRecipe(foodId){
 }
 
 $(document).ready(function(){
+
+    var imagesHeight = $(window).height() - $('.inputs').height();
+    $('.recipes').css({height: imagesHeight});
+
     $('#submit').click(function(){
+        $('#recipe1').text('');
+        $('#recipe2').text('');
+        $('#recipe3').text('');
         getRecipes();
     })
 
