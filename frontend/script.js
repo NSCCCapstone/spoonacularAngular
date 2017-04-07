@@ -36,8 +36,30 @@ function getRecipes()
 
         });
 }
+
 function selectRecipe(foodId){
-    $.get("http://localhost:3000/"+foodId, function(select, status) {
+    $.get("http://localhost:3000/"+foodId, function(data, status) {
+        document.getElementById("loader").style.display = "none";
+        // hide recipe results in order to show selected recipe information,
+        // this will need to be undone if you want to go back to the ingredient list without a page-refresh
+        document.getElementById("recipes").style.display = 'none';
+        document.getElementById("ingredients").style.display = 'block';
+
+        // set ingredients div html to display the title, this will also empty the div of any previous content
+        $('#ingredients').html("<h3>" + data.title + "</h3>");
+
+        // loop through ingredient list and append each ingredient to the #ingredients div
+        for (var i = 0; i < data.extendedIngredients.length; i++) {
+            console.log(data.extendedIngredients[i].name);
+
+            $('#ingredients').append("<p>" + data.extendedIngredients[i].name + "</p>");
+        }
+
+        $('#ingredients').append("<button id='hide-ingredients' class='btn btn-primary'>Back</button>");
+        document.getElementById("hide-ingredients").onclick = function () {
+            document.getElementById("ingredients").style.display = 'none';
+            document.getElementById("recipes").style.display = 'block';
+        };
     });
 }
 
@@ -45,7 +67,7 @@ $(document).ready(function(){
 
     var imagesHeight = $(window).height() - $('.inputs').height();
     $('.recipeImg').css({height: imagesHeight});
-    $('.recipes').css({height: imagesHeight});
+    $('#recipes').css({height: imagesHeight});
 
     $('#submit').click(function(){
         $('#recipe1').text('');

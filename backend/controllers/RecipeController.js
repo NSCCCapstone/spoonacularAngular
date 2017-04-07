@@ -41,8 +41,5 @@ module.exports.show = function(req,res,next){
             console.log(result.body);
             res.json(result.body);
         });
-    // req.getConnection(function(err, connection){
-    //         if (err) return next(err);
-    //     });
 };
 
