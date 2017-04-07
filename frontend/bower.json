@@ -1,0 +1,22 @@
+{
+  "name": "frontend",
+  "homepage": "https://github.com/NSCCCapstone/spoonacularAngular",
+  "authors": [
+    "CBurton1 <chrislukeburton@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.4",
+    "jquery": "^3.2.1",
+    "bootstrap": "^3.3.7"
+  }
+}
