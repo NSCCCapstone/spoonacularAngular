@@ -10,8 +10,20 @@
 
 function getRecipes()
 {
+
+    var likes = $("#likes").tagsinput('items');
+    var dislikes = $("#dislikes").tagsinput('items');
+
+    likes = likes.join();
+    likes.replace(",","%2C+");
+
+    dislikes = dislikes.join();
+    dislikes.replace(",","%2C+");
+
+    var seperator = '%2C+';
     //ajax call to read all events
-        $.get("http://localhost:3000/", function(data, status){
+    //get request with hard-coded query params, replace these with data from the inputs
+        $.get("http://localhost:3000/?dislikes=" + dislikes + "&likes=" + likes, function(data, status){
             console.log(data);
             //run through the data to get each individual recipe
             for(var i = 0; i<data.body.results.length; i++){
@@ -24,8 +36,20 @@ function getRecipes()
 
         });
 }
-
+function selectRecipe(foodId){
+    $.get("http://localhost:3000/"+foodId, function(select, status) {
+        console.log(data.body.results);
+    });
+}
 
 $(document).ready(function(){
-    getRecipes();
+    $('#submit').click(function(){
+        getRecipes();
+    })
+
+    $("search").click(function(){
+        var likes = $("likes").val();
+        var dislikes = $("dislikes").val();
+
+    });
 });
