@@ -51,6 +51,7 @@ img {
     margin: auto;
     width: 16%;
     font-size: 1.5em;
+    margin-bottom: 10px;
 }
 .label{
     font-size: 1.2em;
@@ -60,10 +61,9 @@ img {
     color: #333;
     font-size: 1.2em;
 }
-
 #loader {
     position: fixed;
-    /*display: none;*/
+    display: block;
     width: 100vw;
     /*height: 50px;*/
     left: 0;
@@ -81,7 +81,6 @@ img {
     display: block;
 }
 
-#myDiv {
-    display: none;
-    text-align: center;
+.recipes {
+    background-color: #efefec;
 }
