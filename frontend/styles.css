@@ -41,10 +41,6 @@ img {
     max-height: 100%;
 }
 
-#recipe2 {
-    max-height: 100%;
-}
-
 
 #submit
 {
@@ -83,4 +79,12 @@ img {
 
 #recipes {
     background-color: #efefec;
+}
+
+#ingredients{
+    background-color: #EFEFEC;
+}
+
+#hide-ingredients{
+    margin-bottom: 10px;
 }

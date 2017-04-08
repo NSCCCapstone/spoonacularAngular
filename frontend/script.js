@@ -31,7 +31,7 @@ function getRecipes()
                 var recipe = $('#recipe' + recipeNum);
                 recipe.attr('onclick','selectRecipe(' + data.body.results[i].id + ')');
                 recipe.append('<h1 class="text-center" id="recipeTitle">' + data.body.results[i].title + '</h1>');
-                recipe.append("<img class='recipeImg img-responsive' src='" + data.body.results[i].image + "'/>");
+                recipe.append("<img class='recipeImg' src='" + data.body.results[i].image + "'/>");
             }
 
         });
@@ -52,13 +52,18 @@ function selectRecipe(foodId){
         for (var i = 0; i < data.extendedIngredients.length; i++) {
             console.log(data.extendedIngredients[i].name);
 
-            $('#ingredients').append("<p>" + data.extendedIngredients[i].name + "</p>");
+            $('#ingredients').append("<p>" + data.extendedIngredients[i].originalString + "</p>");
+        }
+
+        if(data.instructions != null){
+            $('#ingredients').append("<p>" + data.instructions + "</p>");
         }
 
         $('#ingredients').append("<button id='hide-ingredients' class='btn btn-primary'>Back</button>");
         document.getElementById("hide-ingredients").onclick = function () {
             document.getElementById("ingredients").style.display = 'none';
             document.getElementById("recipes").style.display = 'block';
+            $('#ingredients').text('');
         };
     });
 }
@@ -66,8 +71,8 @@ function selectRecipe(foodId){
 $(document).ready(function(){
 
     var imagesHeight = $(window).height() - $('.inputs').height();
-    $('.recipeImg').css({height: imagesHeight});
     $('#recipes').css({height: imagesHeight});
+    $('#ingredients').css({height: imagesHeight});
 
     $('#submit').click(function(){
         $('#recipe1').text('');
