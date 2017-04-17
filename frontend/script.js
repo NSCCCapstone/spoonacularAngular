@@ -19,7 +19,34 @@ function getRecipes()
 
     dislikes = dislikes.join();
     dislikes.replace(",","%2C+");
-        $.get("http://localhost:3000/?dislikes=" + dislikes + "&likes=" + likes, function(data, status){
+    if($('.cuisine').text() != 'Cuisine '){
+        cuisine = $('.cuisine').text();
+    }
+    else{
+        cuisine = '';
+    }
+
+    if($('.diet').text() != 'Diet '){
+        diet = $('.diet').text();
+    }
+    else{
+        diet = '';
+    }
+
+    if($('.intolerances').text() != 'Intolerances '){
+        intolerances = $('.intolerances').text();
+    }
+    else{
+        intolerances = '';
+    }
+
+    if($('.mealType').text() != 'Meal Type '){
+        type = $('.mealType').text();
+    }
+    else{
+        type = '';
+    }
+        $.get("http://localhost:3000/?dislikes=" + dislikes + "&likes=" + likes + "&cuisine=" + cuisine + "&intolerances=" + intolerances + "&diet=" + diet + "&type=" + type, function(data, status){
             document.getElementById("loader").style.display = "none";
             //run through the data to get each individual recipe
             var num = 1;
@@ -99,6 +126,19 @@ function setRecipeBlockHeight(){
 }
 
 $(document).ready(function(){
+
+    $(".dropdown-menu li a").click(function(){
+        var selText = $(this).text();
+        $(this).parents('.btn-group').find('.dropdown-toggle').html(selText+' <span class="caret"></span>');
+    });
+
+    $('#settings').click(function(){
+        document.getElementById("mySidenav").style.width = "250px";
+    });
+
+    $('.closebtn').click(function(){
+        document.getElementById("mySidenav").style.width = "0";
+    });
 
     setRecipeBlockHeight();
 
