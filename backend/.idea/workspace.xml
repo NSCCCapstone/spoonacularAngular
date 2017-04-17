@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90140638-c6fe-4e39-8e50-2dd1dbf6e7f6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../frontend/assets/imgs/logo.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../frontend/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../frontend/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../frontend/index.html" afterPath="$PROJECT_DIR$/../frontend/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../frontend/script.js" afterPath="$PROJECT_DIR$/../frontend/script.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../frontend/styles.css" afterPath="$PROJECT_DIR$/../frontend/styles.css" />
     </list>
