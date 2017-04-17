@@ -19,22 +19,20 @@ function getRecipes()
 
     dislikes = dislikes.join();
     dislikes.replace(",","%2C+");
-
-    var seperator = '%2C+';
-    //ajax call to read all events
-    //get request with hard-coded query params, replace these with data from the inputs
         $.get("http://localhost:3000/?dislikes=" + dislikes + "&likes=" + likes, function(data, status){
             document.getElementById("loader").style.display = "none";
             //run through the data to get each individual recipe
+            var num = 1;
             for(var i = 0; i<data.body.results.length; i++){
                 var recipeNum = i + 1;
                 var recipe = $('#recipe' + recipeNum);
                 recipe.attr('onclick','selectRecipe(' + data.body.results[i].id + ')');
-                recipe.append('<h1 class="text-center" id="recipeTitle">' + data.body.results[i].title + '</h1>');
-                recipe.append("<img class='recipeImg' src='" + data.body.results[i].image + "'/>");
-                recipe.append("<button class='btn btn-primary'>More Info</button>");
+                recipe.append("<div class='col-md-12 text-center'><h1 class='text-center' id='recipeTitle'>" + data.body.results[i].title + "</h1></div>");
+                recipe.append("<div class='col-md-12 text-center'><img class='recipeImg' id='recipeImg" + num + "' src='" + data.body.results[i].image + "'/></div>");
+                recipe.append("<div class='col-md-12 text-center'><button class='btn btn-primary moreInfo'>More Info</button></div>");
+                num += 1;
             }
-
+            setImageHeight();
         });
 }
 
@@ -69,6 +67,22 @@ function selectRecipe(foodId){
     });
 }
 
+function setImageHeight(){
+    var num = 1;
+    for (var i = 0; i < 3; i++) {
+        otherwidth = $('#recipe' + num).width();
+        width = $('#recipeImg' + num).width();
+        height = $('#recipeImg' + num).height();
+        if(height > width){ //portrait style photo
+            $('#recipeImg' + num).css('max-height',width);
+            $('#recipeImg' + num).css('width',otherwidth);
+        }
+        else { //landscape photo
+        }
+        num += 1;
+    }
+}
+
 $(document).ready(function(){
 
 
@@ -76,12 +90,12 @@ $(document).ready(function(){
     $('#recipes').css({'min-height': imagesHeight});
     $('#recipes').css({'max-height': imagesHeight});
 
-
     $('#submit').click(function(){
         $('#recipe1').text('');
         $('#recipe2').text('');
         $('#recipe3').text('');
         getRecipes();
+
     })
 
     $("search").click(function(){

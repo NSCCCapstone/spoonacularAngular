@@ -30,13 +30,13 @@ body {
 
 .inputs {
     padding-top: 1%;
+    margin-bottom: 1%;
 }
 .title {
     padding-top: 1%;
 }
 
 img {
-    padding-top: 10px;
     max-width: 100%;
     max-height: 100%;
 }
@@ -47,7 +47,6 @@ img {
     margin: auto;
     width: 16%;
     font-size: 1.5em;
-    margin-bottom: 10px;
 }
 .label{
     font-size: 1.2em;
@@ -58,14 +57,10 @@ img {
     font-size: 1.2em;
 }
 #loader {
-    position: fixed;
     display: block;
-    width: 100vw;
-    /*height: 50px;*/
+    width: 100%;
     left: 0;
     bottom: 0;
-    /*z-index: 1;*/
-    /*margin: -75px 0 0 -75px;*/
     background: #EFEFEC;
     /*background: grey;*/
 }
@@ -96,7 +91,7 @@ img {
 /*}*/
 
 #recipe1, #recipe2, #recipe3 {
-    border: solid black 1px;
+    /*border: solid black 1px;*/
 }
 
 #ingredientsList{
@@ -105,4 +100,12 @@ img {
 
 .tagsinput {
     width: 250px;
+}
+
+.logo{
+    width: 10%;
+}
+
+.moreInfo{
+    margin-top: 10px;
 }
