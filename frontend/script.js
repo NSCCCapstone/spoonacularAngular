@@ -14,6 +14,9 @@ function getRecipes()
     var likes = $("#likes").tagsinput('items');
     var dislikes = $("#dislikes").tagsinput('items');
 
+    var intolerances = $('.selectpicker').val().toString();
+    intolerances.split(',').join('%2C+');
+
     likes = likes.join();
     likes.replace(",","%2C+");
 
@@ -33,15 +36,11 @@ function getRecipes()
         diet = '';
     }
 
-    if($('.intolerances').text() != 'Intolerances '){
-        intolerances = $('.intolerances').text();
-    }
-    else{
-        intolerances = '';
-    }
-
     if($('.mealType').text() != 'Meal Type '){
         type = $('.mealType').text();
+    }
+    else if($('.mealType').text() != 'Main Course'){
+        type = 'main+course';
     }
     else{
         type = '';
@@ -62,9 +61,11 @@ function getRecipes()
             setRecipeBlockHeight();
             $('.cuisine').text('Cuisine ');
             $('.diet').text('Diet ');
-            $('.intolerances').text('Intolerances ');
             $('.mealType').text('Meal Type ');
             document.getElementById("mySidenav").style.width = "0";
+            $('.selectpicker').selectpicker('deselectAll');
+            $('.selectpicker').title('Intolerances');
+
 
         });
 
@@ -139,7 +140,7 @@ $(document).ready(function(){
     });
 
     $('#settings').click(function(){
-        document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("mySidenav").style.width = "300px";
     });
 
     $('.closebtn').click(function(){

@@ -26,6 +26,9 @@ body {
         overflow-y: visible;
         height: auto;
     }
+    #settings {
+        width: 8%;
+    }
 }
 
 .inputs {
@@ -119,6 +122,13 @@ img {
     cursor: pointer;
 }
 
+.selectpicker{
+    margin-left: 15px;
+}
+
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+    margin-left: 15%;
+}
 
 
 
