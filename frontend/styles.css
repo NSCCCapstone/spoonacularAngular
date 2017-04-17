@@ -88,3 +88,21 @@ img {
 #hide-ingredients{
     margin-bottom: 10px;
 }
+
+/*body, html {*/
+    /*overflow-x: hidden;*/
+    /*overflow-y: hidden;*/
+    /*height: 100%;*/
+/*}*/
+
+#recipe1, #recipe2, #recipe3 {
+    border: solid black 1px;
+}
+
+#ingredientsList{
+    text-align: left;
+}
+
+.tagsinput {
+    width: 250px;
+}

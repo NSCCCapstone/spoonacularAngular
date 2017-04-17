@@ -32,6 +32,7 @@ function getRecipes()
                 recipe.attr('onclick','selectRecipe(' + data.body.results[i].id + ')');
                 recipe.append('<h1 class="text-center" id="recipeTitle">' + data.body.results[i].title + '</h1>');
                 recipe.append("<img class='recipeImg' src='" + data.body.results[i].image + "'/>");
+                recipe.append("<button class='btn btn-primary'>More Info</button>");
             }
 
         });
@@ -46,20 +47,20 @@ function selectRecipe(foodId){
         document.getElementById("ingredients").style.display = 'block';
 
         // set ingredients div html to display the title, this will also empty the div of any previous content
-        $('#ingredients').html("<h3>" + data.title + "</h3>");
+        $('#ingredients').html("<h3 class='text-center'>" + data.title + "</h3><ul id='ingredientsList' class='text-center'>");
 
         // loop through ingredient list and append each ingredient to the #ingredients div
         for (var i = 0; i < data.extendedIngredients.length; i++) {
             console.log(data.extendedIngredients[i].name);
 
-            $('#ingredients').append("<p>" + data.extendedIngredients[i].originalString + "</p>");
+            $('#ingredients').append("<li>" + data.extendedIngredients[i].originalString + "</li>");
         }
 
         if(data.instructions != null){
             $('#ingredients').append("<p>" + data.instructions + "</p>");
         }
 
-        $('#ingredients').append("<button id='hide-ingredients' class='btn btn-primary'>Back</button>");
+        $('#ingredients').append("</ul><button id='hide-ingredients' class='btn btn-primary'>Back</button>");
         document.getElementById("hide-ingredients").onclick = function () {
             document.getElementById("ingredients").style.display = 'none';
             document.getElementById("recipes").style.display = 'block';
@@ -70,9 +71,11 @@ function selectRecipe(foodId){
 
 $(document).ready(function(){
 
-    var imagesHeight = $(window).height() - $('.inputs').height();
-    $('#recipes').css({height: imagesHeight});
-    $('#ingredients').css({height: imagesHeight});
+
+    var imagesHeight = $(window).height() - $('#outerContainer').height();
+    $('#recipes').css({'min-height': imagesHeight});
+    $('#recipes').css({'max-height': imagesHeight});
+
 
     $('#submit').click(function(){
         $('#recipe1').text('');
