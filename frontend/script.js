@@ -60,6 +60,12 @@ function getRecipes()
                 num += 1;
             }
             setRecipeBlockHeight();
+            $('.cuisine').text('Cuisine ');
+            $('.diet').text('Diet ');
+            $('.intolerances').text('Intolerances ');
+            $('.mealType').text('Meal Type ');
+            document.getElementById("mySidenav").style.width = "0";
+
         });
 
     setTimeout(function() { setImageHeight(); }, 1000);
