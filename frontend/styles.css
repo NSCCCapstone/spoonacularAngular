@@ -18,7 +18,7 @@ body {
     margin-top: 10px;
 }
 
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 768px) {
     .third {
         width: 100%;
     }
@@ -45,7 +45,6 @@ img {
 #submit
 {
     margin: auto;
-    width: 16%;
     font-size: 1.5em;
 }
 .label{

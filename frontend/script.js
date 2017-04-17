@@ -32,6 +32,7 @@ function getRecipes()
                 recipe.append("<div class='col-md-12 text-center'><button class='btn btn-primary moreInfo'>More Info</button></div>");
                 num += 1;
             }
+            setRecipeBlockHeight();
         });
 
     setTimeout(function() { setImageHeight(); }, 1000);
@@ -61,7 +62,6 @@ function selectRecipe(foodId){
 
         $('#ingredients').append("</ul></div><div class='col-md-12 text-center'><button id='hide-ingredients' class='btn btn-primary'>Back</button></div>");
         document.getElementById("hide-ingredients").onclick = function () {
-            //document.getElementById("ingredients").style.display = 'none';
             document.getElementById("recipes").style.display = 'block';
             $('#ingredients').text('');
         };
@@ -71,9 +71,14 @@ function selectRecipe(foodId){
 function setImageHeight(){
     var num = 1;
     for (var i = 0; i < 3; i++) {
-        otherwidth = $('#recipe' + num).width();
-        $('#recipeImg' + num).css('min-width',otherwidth);
-        $('#recipeImg' + num).css('max-width',otherwidth);
+        if (document.documentElement.clientWidth > 768) {
+            otherwidth = $('#recipe' + num).width();
+            $('#recipeImg' + num).css('min-width',otherwidth);
+            $('#recipeImg' + num).css('max-width',otherwidth);
+        }
+        else{
+
+        }
         width = $('#recipeImg' + num).width();
         height = $('#recipeImg' + num).height();
         if(height > width){ //portrait style photo
@@ -87,8 +92,10 @@ function setImageHeight(){
 
 function setRecipeBlockHeight(){
     var recipeBlockHeight = $(window).height() - $('#outerContainer').height();
-    $('#recipes').css({'min-height': recipeBlockHeight});
-    $('#recipes').css({'max-height': recipeBlockHeight});
+    if (document.documentElement.clientWidth > 768) {
+        $('#recipes').css({'min-height': recipeBlockHeight});
+        $('#recipes').css({'max-height': recipeBlockHeight});
+    }
 }
 
 $(document).ready(function(){
