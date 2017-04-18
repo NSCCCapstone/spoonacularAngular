@@ -76,6 +76,8 @@ img {
 
 #recipes {
     background-color: #efefec;
+    padding-left: 0px;
+    padding-right: 0px;
 }
 
 #ingredients{
@@ -93,6 +95,7 @@ img {
 /*}*/
 
 #recipe1, #recipe2, #recipe3 {
+    cursor: pointer;
     /*border: solid black 1px;*/
 }
 

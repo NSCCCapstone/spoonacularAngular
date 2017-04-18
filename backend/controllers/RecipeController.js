@@ -17,8 +17,8 @@ module.exports.index = function(req,res,next){
         console.log("Cuisine: " + cuisine);
         var diet = req.query.diet;
         console.log("Diet: " + diet);
-        var intolerances = req.query.intolerances;
-        console.log("Intolerances: " + intolerances);
+        //var intolerances = req.query.intolerances;
+        //console.log("Intolerances: " + intolerances);
         var type = req.query.type;
         console.log("Type: " + type);
 
@@ -29,8 +29,7 @@ module.exports.index = function(req,res,next){
             + cuisine + "&excludeIngredients="
             + exclude_str + "&fillIngredients=false&includeIngredients="
             + include_str + "&instructionsRequired=false&diet="
-            + diet + "&limitLicense=false&intolerances="
-            + intolerances + "&number=3&offset=0&ranking=1&type="
+            + diet + "&limitLicense=false&number=3&offset=0&ranking=1&type="
             + type + "")
 
             .header("X-Mashape-Key", "Tvrn3k9JkhmshuZ8RNyT4i3v4G1Hp10U0YkjsnOd1d34u7DOaJ")
