@@ -15,7 +15,7 @@ function getRecipes()
     var dislikes = $("#dislikes").tagsinput('items');
 
     var intolerances = $('.selectpicker').val().toString();
-    intolerances.split(',').join('%2C+');
+    intolerances.replace(',','%2C+');
 
     likes = likes.join();
     likes.replace(",","%2C+");
@@ -39,13 +39,15 @@ function getRecipes()
     if($('.mealType').text() != 'Meal Type '){
         type = $('.mealType').text();
     }
-    else if($('.mealType').text() != 'Main Course'){
+    else if($('.mealType').text() == 'Main Course'){
         type = 'main+course';
     }
     else{
         type = '';
     }
-        $.get("http://localhost:3000/?dislikes=" + dislikes + "&likes=" + likes + "&cuisine=" + cuisine + "&intolerances=" + intolerances + "&diet=" + diet + "&type=" + type, function(data, status){
+        $.get("http://localhost:3000/?dislikes=" + dislikes + "&likes=" + likes + "&cuisine=" + cuisine + "&intolerances=" + intolerances + "&diet=" + diet + "&type=" + type,
+            function(data, status){
+            console.log(data.body.results);
             document.getElementById("loader").style.display = "none";
             //run through the data to get each individual recipe
             var num = 1;

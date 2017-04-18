@@ -23,7 +23,6 @@ module.exports.index = function(req,res,next){
         console.log("Type: " + type);
 
         include_str = likes.join("%2C+");
-        intolerances_str = intolerances.join("%2C+")
         exclude_str = dislikes.join("%2C+");
 
         unirest.get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/searchComplex?addRecipeInformation=false&cuisine="
@@ -31,12 +30,13 @@ module.exports.index = function(req,res,next){
             + exclude_str + "&fillIngredients=false&includeIngredients="
             + include_str + "&instructionsRequired=false&diet="
             + diet + "&limitLicense=false&intolerances="
-            + intolerances_str + "&number=3&offset=0&ranking=1&type="
+            + intolerances + "&number=3&offset=0&ranking=1&type="
             + type + "")
 
             .header("X-Mashape-Key", "Tvrn3k9JkhmshuZ8RNyT4i3v4G1Hp10U0YkjsnOd1d34u7DOaJ")
             .header("Accept", "application/json")
             .end(function (result) {
+                console.log(result);
                 console.log(result.status, result.headers, result.body);
                 res.json(result)
             });
