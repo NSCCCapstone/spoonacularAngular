@@ -112,7 +112,7 @@ function setImageHeight(){
             $('#recipe2').css({'display':'block'});
             $('#recipe3').css({'display':'block'});
             otherwidth = $('#recipe' + num).width();
-            otherheight = $('#recipe' + num).height() - 70;
+            otherheight = $('#recipe' + num).height() - 80;
             $('#recipeImg' + num).css('min-width',otherwidth);
             $('#recipeImg' + num).css('max-width',otherwidth);
             $('#recipeImg' + num).css('min-height',otherheight);
